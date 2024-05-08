@@ -1,4 +1,4 @@
-import { LinksFunction } from "@remix-run/cloudflare";
+import { LinksFunction, MetaFunction } from "@remix-run/cloudflare";
 import {
   Links,
   Meta,
@@ -11,7 +11,18 @@ import stylesheet from '~/tailwind.css?url';
 
 export const links: LinksFunction = () => [{ rel: 'stylesheet', href: stylesheet }];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const meta: MetaFunction = () => {
+  return [
+    { title: "New Remix App" },
+    {
+      name: "description",
+      content: "Welcome to Remix! Using Vite and Cloudflare!",
+    },
+  ];
+};
+
+
+export default function App() {
   return (
     <html lang="en">
       <head>
@@ -21,14 +32,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }

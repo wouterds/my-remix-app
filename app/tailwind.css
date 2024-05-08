@@ -12,5 +12,4 @@ body {
   @apply font-mono text-xs;
   @apply text-black;
   @apply p-6;
-  @apply text-base;
 }

@@ -1,35 +1,35 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
+import { Layout } from "~/components/layout";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    {
-      name: "description",
-      content: "Welcome to Remix! Using Vite and Cloudflare!",
-    },
+    { title: "Index" },
   ];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix (with Vite and Cloudflare)</h1>
+    <Layout>
       <ul>
         <li>
           <a
             target="_blank"
             href="https://developers.cloudflare.com/pages/framework-guides/deploy-a-remix-site/"
             rel="noreferrer"
-          >
+            className="hover:underline">
             Cloudflare Pages Docs - Remix guide
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
+          <a
+            target="_blank"
+            href="https://remix.run/docs"
+            rel="noreferrer"
+            className="hover:underline">
             Remix Docs
           </a>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
