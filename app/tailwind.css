@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply min-h-full;
+  @apply bg-white;
+}
+
+body {
+  @apply font-mono text-xs;
+  @apply text-black;
+  @apply p-6;
+  @apply text-base;
+}
